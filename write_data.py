@@ -15,8 +15,8 @@ wks2 = gc.open("data_2").sheet1
 
 
 
-row = 2
-CARD_ID = "F9322"
+
+CARD_ID = "F9122"
 UID = "0000"
 Sign_io = "True"
 Date = "error"
@@ -54,5 +54,5 @@ while True:
 
 
 
-#wks2.resize(1)
+wks2.resize(1)
 
