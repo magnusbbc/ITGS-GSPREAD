@@ -23,6 +23,8 @@ Time = "error"
 FName = "error"
 LName = "error"
 check_value = 1
+input_var = 0
+input_list = {}
 with open('data_1.csv', 'rb') as f:
         reader = csv.reader(f)
         row_count = sum(1 for row in reader)
@@ -42,49 +44,65 @@ signal.signal(signal.SIGINT, end_read)
 
 # Create an object of the class MFRC522
 MIFAREReader = MFRC522.MFRC522()
-
+print "Ctrl+C to stop capture"
 wks2 = gc.open("data_2").sheet1
 # This loop keeps checking for chips. If one is near it will get the UID and authenticate
-while continue_reading:
 
-    # Scan for cards
-    (status, TagType) = MIFAREReader.MFRC522_Request(MIFAREReader.PICC_REQIDL)
+while True
+    input_var = input("0.Initiate Reading\n1.Add User\n2.Delete User\nEnter Value:")
+    if input_var == 0:
+        while continue_reading:
+            # Scan for cards
+            (status, TagType) = MIFAREReader.MFRC522_Request(MIFAREReader.PICC_REQIDL)
 
-    # If a card is found
-    if status == MIFAREReader.MI_OK:
-        print "Card detected"
+            # If a card is found
+            if status == MIFAREReader.MI_OK:
+                print "Card detected"
 
-    # Get the UID of the card
-    (status,uid) = MIFAREReader.MFRC522_Anticoll()
+            # Get the UID of the card
+            (status,uid) = MIFAREReader.MFRC522_Anticoll()
 
-    # If we have the UID, continue
-    if status == MIFAREReader.MI_OK:
+            # If we have the UID, continue
+            if status == MIFAREReader.MI_OK:
 
-        # Print UID
-        print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
+                # Print UID
+                print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
 
-        # This is the default key for authentication
-        key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
+                # This is the default key for authentication
+                key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
 
-        #Authenticate and log
-        while True:
-            with open('data_1.csv', 'rb') as f:
-                reader = csv.reader(f)
-                reader = list(reader)
-                check = reader[check_value][0]
-            print check
-            if check == CARD_ID:
-                with open('data_1.csv', 'rb') as f:
-                    reader = csv.reader(f)
-                    for i in range(check_value+1):
-                        values_list = reader.next()
-                values_list.pop(0)
-                values_list.insert(1, Sign_io)
-                values_list.insert(2, time.strftime("%d/%m/%Y"))
-                values_list.insert(3, time.strftime("%I:%M:%S"))
-                wks2.append_row(values_list)
-                break
-            elif check_value == row_count-1:
-                print "Card ID does not exists"
-                break
-            check_value += 1
+                #Authenticate and log
+                while True:
+                    with open('data_1.csv', 'rb') as f:
+                        reader = csv.reader(f)
+                        reader = list(reader)
+                        check = reader[check_value][0]
+                    print check
+                    if check == CARD_ID:
+                        with open('data_1.csv', 'rb') as f:
+                            reader = csv.reader(f)
+                            for i in range(check_value+1):
+                                values_list = reader.next()
+                        values_list.pop(0)
+                        values_list.insert(1, Sign_io)
+                        values_list.insert(2, time.strftime("%d/%m/%Y"))
+                        values_list.insert(3, time.strftime("%I:%M:%S"))
+                        wks2.append_row(values_list)
+                        break
+                    elif check_value == row_count-1:
+                        print "Card ID does not exists"
+                        break
+                    check_value += 1
+            elif input_var == 1:
+                input_list[0] = raw_input("Enter Card number:")
+                input_list[1] = 1000+(row_count - 1)
+                input_list[2] = raw_input("Enter First Name:")
+                input_list[3] = raw_input("Enter Last Name:")
+                c = csv.writer(open("data_1.csv", "a"), lineterminator='\n')
+                c.writerow([input_list[0],input_list[1],input_list[2],input_list[3]])
+
+            elif input_var == 2:
+                #TODO
+                print ("todo")
+            else:
+                print ("Incorrect Value, must be between 0 and 2!")
