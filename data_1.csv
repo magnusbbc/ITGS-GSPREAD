@@ -1,9 +1,8 @@
 CARD_ID,UID,Name,last name
-AAA21,1001,Magnus,Christensen
-FF211,1002,Alec,Karlsen
-CCF11,1003,Joeseph ,Baxter
-EF214,1004,Connor,Sullivan
-FEA13,1005,Donald,Caldweld
-F9122,1006,Abhishek,Singh
-CF121,1007,Dennis,Chavez
-FA918,1008,Flemming,Christensen
+"133,237,227,40",1001,Magnus,Christensen
+"229,58,144,40",1002,Alec,Karlsen
+"197,88,140,40",1003,Joeseph ,Baxter
+"165,2,207,40",1004,Connor,Sullivan
+"229,80,205,40",1005,Donald,Caldweld
+"213,39,219,29",1006,Abhishek,Singh
+

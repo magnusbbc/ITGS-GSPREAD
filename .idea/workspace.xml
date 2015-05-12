@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d5417e19-f51e-4403-9abc-9722ef79dbd7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pi example_1.py" afterPath="$PROJECT_DIR$/Pi example_1.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_1.csv" afterPath="$PROJECT_DIR$/data_1.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/write_data.py" afterPath="$PROJECT_DIR$/write_data.py" />
     </list>
     <ignored path="ITGS-GSPREAD.iws" />
@@ -41,8 +41,8 @@
       <file leaf-file-name="write_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/write_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="626" max-vertical-offset="1292">
-              <caret line="70" column="55" selection-start-line="58" selection-start-column="0" selection-end-line="70" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="1292">
+              <caret line="50" column="60" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -51,8 +51,8 @@
       <file leaf-file-name="Pi example_1.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pi example_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.041806" vertical-offset="0" max-vertical-offset="1938">
-              <caret line="107" column="16" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
+            <state vertical-scroll-proportion="2.4956396" vertical-offset="0" max-vertical-offset="1921">
+              <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
               <folding>
                 <element signature="e#14#37#0" expanded="true" />
               </folding>
@@ -335,7 +335,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33896515" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21330518" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -583,16 +583,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/write_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="626" max-vertical-offset="1292">
-          <caret line="70" column="55" selection-start-line="58" selection-start-column="0" selection-end-line="70" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="1292">
+          <caret line="50" column="60" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pi example_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.041806" vertical-offset="0" max-vertical-offset="1938">
-          <caret line="107" column="16" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
+        <state vertical-scroll-proportion="2.4956396" vertical-offset="0" max-vertical-offset="1921">
+          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding>
             <element signature="e#14#37#0" expanded="true" />
           </folding>

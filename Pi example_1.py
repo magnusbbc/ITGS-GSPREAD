@@ -15,8 +15,8 @@ json_key = json.load(open('ITGS-test-01071b9eba81.json'))
 scope = ['https://spreadsheets.google.com/feeds']
 credentials = SignedJwtAssertionCredentials(json_key['client_email'], json_key['private_key'], scope)
 gc = gspread.authorize(credentials)
-CARD_ID = "F9122"
 UID = "0000"
+loop = 0
 Sign_io = "True"
 Date = "error"
 Time = "error"
@@ -48,7 +48,7 @@ print "Ctrl+C to stop capture"
 wks2 = gc.open("data_2").sheet1
 # This loop keeps checking for chips. If one is near it will get the UID and authenticate
 
-while True
+while True:
     input_var = input("0.Initiate Reading\n1.Add User\n2.Delete User\nEnter Value:")
     if input_var == 0:
         while continue_reading:
@@ -65,20 +65,19 @@ while True
             # If we have the UID, continue
             if status == MIFAREReader.MI_OK:
 
-                # Print UID
-                print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
+                # save UID
 
-                # This is the default key for authentication
-                key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
-
+                UID_check = str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
+                loop = 1
+                check_value = 1
                 #Authenticate and log
-                while True:
+                while loop ==1:
                     with open('data_1.csv', 'rb') as f:
                         reader = csv.reader(f)
                         reader = list(reader)
                         check = reader[check_value][0]
                     print check
-                    if check == CARD_ID:
+                    if check == UID_check:
                         with open('data_1.csv', 'rb') as f:
                             reader = csv.reader(f)
                             for i in range(check_value+1):
@@ -88,21 +87,21 @@ while True
                         values_list.insert(2, time.strftime("%d/%m/%Y"))
                         values_list.insert(3, time.strftime("%I:%M:%S"))
                         wks2.append_row(values_list)
-                        break
+                        loop = 0
                     elif check_value == row_count-1:
                         print "Card ID does not exists"
-                        break
+                        loop = 0
                     check_value += 1
-            elif input_var == 1:
-                input_list[0] = raw_input("Enter Card number:")
-                input_list[1] = 1000+(row_count - 1)
-                input_list[2] = raw_input("Enter First Name:")
-                input_list[3] = raw_input("Enter Last Name:")
-                c = csv.writer(open("data_1.csv", "a"), lineterminator='\n')
-                c.writerow([input_list[0],input_list[1],input_list[2],input_list[3]])
+    elif input_var == 1:
+        input_list[0] = raw_input("Enter Card number:")
+        input_list[1] = 1000+(row_count - 1)
+        input_list[2] = raw_input("Enter First Name:")
+        input_list[3] = raw_input("Enter Last Name:")
+        c = csv.writer(open("data_1.csv", "a"), lineterminator='\n')
+        c.writerow([input_list[0],input_list[1],input_list[2],input_list[3]])
 
-            elif input_var == 2:
-                #TODO
-                print ("todo")
-            else:
-                print ("Incorrect Value, must be between 0 and 2!")
+    elif input_var == 2:
+        #TODO
+        print ("todo")
+    else:
+        print ("Incorrect Value, must be between 0 and 2!")

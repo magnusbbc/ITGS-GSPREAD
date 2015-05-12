@@ -16,7 +16,7 @@ wks2 = gc.open("data_2").sheet1
 
 
 
-CARD_ID = "F9122"
+CARD_ID = "229,58,144,40"
 UID = "0000"
 Sign_io = "True"
 Date = "error"
@@ -70,5 +70,5 @@ elif input_var == 2:
 else:
     print ("Incorrect Value, must be between 0 and 2!")
 
-#wks2.resize(1)
+wks2.resize(1)
 
